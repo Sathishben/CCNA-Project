@@ -1,0 +1,252 @@
+sw1---------
+
+hostname HR-SW  
+banner motd #No Unauthorised Access#
+no ip domain lookup
+line console 0
+passw cisco
+login
+exit
+
+enable password cisco
+service password-encryption
+ex
+wr
+
+int range fa0/1-2
+switchport mode trunk
+exit
+
+vlan 10
+name HR
+exit
+
+int range fa0/3-24
+switchport mode access
+switchport mode access vlan 10
+exit
+do wr
+
+vlan 99 
+name GB
+exit
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan 99
+shutdown
+exit
+
+do wr
+
+
+sw2--------------------------------------------
+
+en
+conf t
+hostname ADMIN&SERVER-SW  
+banner motd #No Unauthorised Access#
+no ip domain lookup
+line console 0
+passw cisco
+login
+exit
+
+enable password cisco
+service password-encryption
+ex
+wr
+
+int range fa0/1-2
+switchport mode trunk
+exit
+
+vlan 20
+name ADMIN&SERVER
+exit
+vlan 99
+name GB
+exit
+
+int range Fa0/3-24
+switchport mode access
+switchport access vlan 20
+exit
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan 99
+exit
+
+do wr
+
+sw3-----------------------------------------------
+
+en
+conf t
+hostname DEV-SW  
+banner motd #No Unauthorised Access#
+no ip domain lookup
+line console 0
+passw cisco
+login
+exit
+
+enable password cisco
+service password-encryption
+ex
+wr
+
+int range fa0/1-2
+switchport mode trunk
+exit
+
+vlan 30
+name DEV
+exit
+vlan 99
+name GB
+exit
+
+int range Fa0/3-24
+switchport mode access
+switchport access vlan 30
+exit
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan 99
+exit
+
+do wr
+
+
+sw4------------------------------------------------
+
+en
+conf t
+hostname ST-SW  
+banner motd #No Unauthorised Access#
+no ip domain lookup
+line console 0
+passw cisco
+login
+exit
+
+enable password cisco
+service password-encryption
+ex
+wr
+
+int range fa0/1-2
+switchport mode trunk
+exit
+
+vlan 40
+name TESTING
+exit
+vlan 99
+name GB
+exit
+
+int range Fa0/3-24
+switchport mode access
+switchport access vlan 40
+exit
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan 99
+exit
+
+do wr
+
+
+sw5---------------------------------------------------
+
+en
+conf t
+hostname SALES-SW  
+banner motd #No Unauthorised Access#
+no ip domain lookup
+line console 0
+passw cisco
+login
+exit
+
+enable password cisco
+service password-encryption
+ex
+wr
+
+int range fa0/1-2
+switchport mode trunk
+exit
+
+vlan 50
+name SALES
+exit
+vlan 99
+name GB
+exit
+
+int range Fa0/3-24
+switchport mode access
+switchport access vlan 50
+exit
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan 99
+exit
+
+do wr
+
+
+sw6--------------------------------------------------------
+
+en
+conf t
+hostname FINACE-SW  
+banner motd #No Unauthorised Access#
+no ip domain lookup
+line console 0
+passw cisco
+login
+exit
+
+enable password cisco
+service password-encryption
+ex
+wr
+
+int range fa0/1-2
+switchport mode trunk
+exit
+
+vlan 60
+name FINANCE
+exit
+vlan 99
+name GB
+exit
+
+int range Fa0/3-24
+switchport mode access
+switchport access vlan 60
+exit
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan 99
+exit
+
+do wr
+
+int range Fa0/3-24
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation shutdown
+ex
+
+

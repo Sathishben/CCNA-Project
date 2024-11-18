@@ -1,0 +1,57 @@
+server
+
+DHCP Server
+
+172.16.1.130
+255.255.255.240
+172.16.1.129
+172.16.1.131
+
+HRpool
+DG:172.16.1.1
+DNS: 172.16.1.131
+start ip : 172.16.1.2
+subnet mask: 255.255.255.128
+number of user: 120
+
+DEVpool
+DG:172.16.2.1
+DNS: 172.16.1.131
+start ip : 172.16.2.2
+subnet mask: 255.255.255.128
+number of user: 120
+
+TESTINGpool
+DG:172.16.2.129
+DNS: 172.16.1.131
+start ip : 172.16.2.130
+subnet mask: 255.255.255.128
+number of user: 120
+
+SALESpool
+DG:172.16.3.1
+DNS: 172.16.1.131
+start ip : 172.16.3.2
+subnet mask: 255.255.255.128
+number of user: 120
+
+FINANCEpool
+DG:172.16.3.129
+DNS: 172.16.1.131
+start ip : 172.16.3.130
+subnet mask: 255.255.255.128
+number of user: 120
+
+
+DNS Server--------------------------------------------
+
+172.16.1.131
+255.255.255.240
+172.16.1.129
+172.16.1.131
+
+NAME : www.google.com
+ip: 172.16.1.134
+
+name: www.xyxtech.com
+ip: 172.16.1.135

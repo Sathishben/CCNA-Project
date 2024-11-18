@@ -1,0 +1,21 @@
+Access Point Config
+
+HR AP
+
+SSID: HR DEP AP
+Password: hr_Ap123
+
+Dev AP
+
+SSID: DEV Ap
+Password: dev_Ap123
+
+Testing AP
+
+SSID: Testing Ap
+Password: Testing_Ap123
+
+Finance AP
+
+SSID: Finance AP
+Password: finace_AP123
